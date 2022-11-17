@@ -1,0 +1,11 @@
+<h1> <%= @list.name %> Details </h1>
+<ul>
+  <% @list.movies.each do |m| %>
+  <li><%= m.title %></li>
+  <p><%= m.overview %> --- rating <%= m.rating %></p>
+  <%= image_tag m.poster_url, width: 400 %>
+  <% end %>
+</ul>
+
+
+<%= link_to "Back to Lists of Movies", lists_path(@lists) %>
